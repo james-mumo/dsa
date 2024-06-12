@@ -1,14 +1,16 @@
-def TwoSum(nums, target):
-    visited = {}
-    for k, v in enumerate(nums):
-        diff = target - v
-        if diff in visited:
-            return [visited[diff], k]
-        visited[v] = k
-    return
+import sys
+
+i = 0
 
 
-nums = [2, 7, 11, 15]
-target = 9
+def ne():
+    global i
+    i += 1
+    print("James", i)
 
-print(TwoSum(nums, target))
+    ne()
+
+
+sys.setrecursionlimit(2000)
+print(sys.getrecursionlimit())
+ne()
