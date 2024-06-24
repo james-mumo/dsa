@@ -1,32 +1,22 @@
-def linSearch(arr, target):
-    for index, value in enumerate(arr):
-        if value == target:
-            return index
-    return -1
+def rotate(matrix):
+    # transpose
+    n = len(matrix)
 
+    for i in range(n):
+        for j in range(i + 1, n):
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 
-arr = [1, 2, 3, 4, 5]
+#     reverse
+    for row in matrix:
+        row.reverse()
 
+matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+]
 
-# print(linSearch(arr, 2))
+print(matrix)
+rotate(matrix)
+print(matrix)
 
-
-def binSearch(arr, target):
-    l = 0
-    r = len(arr) - 1
-
-    while l <= r:
-        mid = l+(r - l) // 2
-
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            l = mid + 1
-        else:
-            r = mid - 1
-    return -1
-
-arr = [1, 2, 3, 4, 5]
-print(binSearch(arr, 4))
-
-print(3//2)
